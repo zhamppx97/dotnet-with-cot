@@ -1,0 +1,431 @@
+<log xmlns="urn:schemas-codeontime-com:xml-builder" xmlns:aquarium="urn:schemas-codeontime-com:data-aquarium" xmlns:a="urn:schemas-codeontime-com:data-aquarium">
+  <c y="NodeSet" t="2020-03-13T11:34:16">
+    <controller name="Tasks" />
+    <view id="editForm1" />
+    <update>
+      <Tags>meterial-icon-event</Tags>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T11:34:36">
+    <controller name="Tasks" />
+    <view id="createForm1" />
+    <update>
+      <Tags>meterial-icon-event</Tags>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T11:48:32">
+    <controller name="Tasks" />
+    <insert type="rule">
+      <Type>Sql</Type>
+      <CommandName>New</CommandName>
+      <Phase>Execute</Phase>
+      <Script>SET @Created = GETDATE()</Script>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:03:49">
+    <controller name="Tasks" />
+    <view id="createForm1" />
+    <dataField fieldName="Created" />
+    <update>
+      <Hidden>true</Hidden>
+      <DataViewShowInSummary>false</DataViewShowInSummary>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:04:26">
+    <controller name="Tasks" />
+    <view id="editForm1" />
+    <dataField fieldName="Created" />
+    <update>
+      <TextMode>Static</TextMode>
+      <Hidden>false</Hidden>
+      <DataViewShowInSummary>false</DataViewShowInSummary>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:08:08">
+    <controller name="Tasks" />
+    <view id="createForm1" />
+    <category id="c1" />
+    <dataField fieldName="Completed" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:08:23">
+    <controller name="Tasks" />
+    <view id="editForm1" />
+    <dataField fieldName="Completed" />
+    <update>
+      <TextMode>Static</TextMode>
+      <Hidden>false</Hidden>
+      <DataViewShowInSummary>false</DataViewShowInSummary>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:16:07">
+    <controller name="Tasks" />
+    <actionGroup id="ag2" />
+    <insert type="action">
+      <CommandName>Custom</CommandName>
+      <CommandArgument>CompleteTask</CommandArgument>
+      <HeaderText>Complete</HeaderText>
+      <CausesValidation>true</CausesValidation>
+      <WhenClientScript>$row.Completed == null</WhenClientScript>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:16:39">
+    <controller name="Tasks" />
+    <actionGroup id="ag1" />
+    <copy>
+      <controller name="Tasks" />
+      <actionGroup id="ag2" />
+      <action id="a100" />
+    </copy>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:19:19">
+    <controller name="Tasks" />
+    <insert type="rule">
+      <Type>Sql</Type>
+      <CommandName>Custom</CommandName>
+      <CommandArgument>CompleteTask</CommandArgument>
+      <Phase>Execute</Phase>
+      <Script>UPDATE Tasks
+SET Completed = GETDATE()
+WHERE TaskID = @TaskID</Script>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:24:14">
+    <controller name="Tasks" />
+    <actionGroup id="ag2" />
+    <action id="a100" />
+    <update>
+      <CssClass>meterial-icon-assignment-turned-in</CssClass>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:27:41">
+    <controller name="Tasks" />
+    <actionGroup id="ag1" />
+    <action id="a100" />
+    <update>
+      <CssClass>meterial-icon-assignment-turned-in</CssClass>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:29:39">
+    <controller name="Tasks" />
+    <actionGroup id="ag2" />
+    <action id="a100" />
+    <update>
+      <CssClass>app-icon material-icon material-icon-search</CssClass>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:31:24">
+    <controller name="Tasks" />
+    <actionGroup id="ag1" />
+    <action id="a100" />
+    <update>
+      <CssClass />
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T12:31:42">
+    <controller name="Tasks" />
+    <actionGroup id="ag2" />
+    <action id="a100" />
+    <update>
+      <CssClass>material-icon material-icon-search</CssClass>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:00:11">
+    <controller name="Tasks" />
+    <actionGroup id="ag1" />
+    <action id="a100" />
+    <update>
+      <CssClass>app-icon material-icon material-icon-search</CssClass>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:03:16">
+    <controller name="Tasks" />
+    <actionGroup id="ag1" />
+    <action id="a100" />
+    <update>
+      <CssClass />
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:03:39">
+    <controller name="Tasks" />
+    <actionGroup id="ag2" />
+    <action id="a100" />
+    <update>
+      <CssClass>material-icon-search</CssClass>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:06:28">
+    <controller name="Tasks" />
+    <actionGroup id="ag1" />
+    <action id="a100" />
+    <update>
+      <CssClass>material-icon-search</CssClass>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:08:14">
+    <controller name="Tasks" />
+    <actionGroup id="ag2" />
+    <action id="a100" />
+    <update>
+      <CssClass />
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:08:41">
+    <controller name="Tasks" />
+    <actionGroup id="ag1" />
+    <action id="a100" />
+    <update>
+      <CssClass>material-icon-assignment</CssClass>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:09:56">
+    <controller name="Tasks" />
+    <actionGroup id="ag1" />
+    <action id="a100" />
+    <update>
+      <CssClass>material-icon-assignment-turned-in</CssClass>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:14:59">
+    <controller name="Tasks" />
+    <view id="grid1" />
+    <update>
+      <Label>Active Tasks</Label>
+      <FilterExpression>Completed is null</FilterExpression>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:15:08">
+    <controller name="Tasks" />
+    <copy>
+      <controller name="Tasks" />
+      <view id="grid1" />
+    </copy>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:15:59">
+    <controller name="Tasks" />
+    <view id="v100" />
+    <rename>gridAllTasks</rename>
+  </c>
+  <c y="NodeSet" t="2020-03-13T14:16:48">
+    <controller name="Tasks" />
+    <view id="gridAllTasks" />
+    <update>
+      <Label>All Tasks</Label>
+      <SortExpression>Completed desc</SortExpression>
+      <FilterExpression />
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-16T11:42:49">
+    <controller name="Tasks" />
+    <move>
+      <controller name="Attachments" />
+    </move>
+  </c>
+  <c y="NodeSet" t="2020-03-16T11:43:32">
+    <controller name="Tasks" />
+    <view id="gridAllTasks" />
+    <move>
+      <controller name="Tasks" />
+      <field name="Attachments" />
+    </move>
+  </c>
+  <c y="NodeSet" t="2020-03-16T11:44:00">
+    <controller name="Tasks" />
+    <view id="createForm1" />
+    <move>
+      <controller name="Tasks" />
+      <field name="Attachments" />
+    </move>
+  </c>
+  <c y="NodeSet" t="2020-03-16T11:44:03">
+    <controller name="Tasks" />
+    <view id="editForm1" />
+    <move>
+      <controller name="Tasks" />
+      <field name="Attachments" />
+    </move>
+  </c>
+  <c y="NodeSet" t="2020-03-16T11:44:11">
+    <controller name="Tasks" />
+    <view id="grid1" />
+    <move>
+      <controller name="Tasks" />
+      <field name="Attachments" />
+    </move>
+  </c>
+  <c y="NodeSet" t="2020-03-16T11:44:28">
+    <controller name="Tasks" />
+    <view id="grid1" />
+    <dataField fieldName="Attachments" />
+    <update>
+      <Hidden>false</Hidden>
+      <DataViewShowInSummary>false</DataViewShowInSummary>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-16T11:44:32">
+    <controller name="Tasks" />
+    <view id="grid1" />
+    <dataField fieldName="Attachments" />
+    <update>
+      <Hidden>false</Hidden>
+      <DataViewShowInSummary>false</DataViewShowInSummary>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:00:07">
+    <controller name="Tasks" />
+    <field name="Creator" />
+    <update>
+      <ItemsStyle>UserNameLookup</ItemsStyle>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:00:34">
+    <controller name="Tasks" />
+    <field name="Owner" />
+    <update>
+      <ItemsStyle>UserNameLookup</ItemsStyle>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:03:53">
+    <controller name="Tasks" />
+    <insert type="rule">
+      <Type>Sql</Type>
+      <CommandName>Insert</CommandName>
+      <Phase>Before</Phase>
+      <Script>SET @Creator = @BusinessRules_UserName
+IF (@Owner IS NULL)
+      SET @Owner = @BusinessRules_UserName</Script>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:05:53">
+    <controller name="Tasks" />
+    <view id="grid1" />
+    <dataField fieldName="LocationAddress" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:05:53">
+    <controller name="Tasks" />
+    <view id="grid1" />
+    <dataField fieldName="City" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:05:53">
+    <controller name="Tasks" />
+    <view id="grid1" />
+    <dataField fieldName="State" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:05:53">
+    <controller name="Tasks" />
+    <view id="grid1" />
+    <dataField fieldName="PostalCode" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:05:53">
+    <controller name="Tasks" />
+    <view id="grid1" />
+    <dataField fieldName="Country" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:06:34">
+    <controller name="Tasks" />
+    <view id="gridAllTasks" />
+    <dataField fieldName="LocationAddress" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:06:34">
+    <controller name="Tasks" />
+    <view id="gridAllTasks" />
+    <dataField fieldName="City" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:06:34">
+    <controller name="Tasks" />
+    <view id="gridAllTasks" />
+    <dataField fieldName="State" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:06:34">
+    <controller name="Tasks" />
+    <view id="gridAllTasks" />
+    <dataField fieldName="PostalCode" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-16T12:06:34">
+    <controller name="Tasks" />
+    <view id="gridAllTasks" />
+    <dataField fieldName="Country" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2020-03-18T15:20:24">
+    <controller name="Tasks" />
+    <insert type="rule">
+      <Type>JavaScript</Type>
+      <CommandName>New</CommandName>
+      <Phase>After</Phase>
+      <Script>var d = new Date();
+if (d.getMinutes() &lt; 30)
+    d.setMinutes(30, 0, 0);
+else
+    d.setMinutes(60, 0, 0);
+$row.Date = d;</Script>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2020-03-18T15:24:14">
+    <controller name="Tasks" />
+    <rule id="r102" />
+    <update>
+      <Script>SET @Creator = @BusinessRules_UserName
+IF (@Owner IS NULL)
+    SET @Owner = @BusinessRules_UserName</Script>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-18T15:24:34">
+    <controller name="Tasks" />
+    <rule id="r102" />
+    <update>
+      <Script>SET @Creator = @BusinessRules_UserName
+IF (@Owner IS NULL)
+    SET @Owner = @BusinessRules_UserName</Script>
+    </update>
+  </c>
+  <c y="NodeSet" t="2020-03-18T15:25:20">
+    <controller name="Tasks" />
+    <rule id="r101" />
+    <rename>r104</rename>
+  </c>
+  <c y="NodeSet" t="2020-03-18T15:25:42">
+    <controller name="Tasks" />
+    <rule id="r103" />
+    <rename>r101</rename>
+  </c>
+  <c y="NodeSet" t="2020-03-18T15:26:09">
+    <controller name="Tasks" />
+    <rule id="r102" />
+    <rename>r103</rename>
+  </c>
+  <c y="NodeSet" t="2020-03-18T15:26:15">
+    <controller name="Tasks" />
+    <rule id="r104" />
+    <rename>r102</rename>
+  </c>
+  <c y="NodeSet" t="2020-03-18T15:28:21">
+    <controller name="Tasks" />
+    <rule id="r100" />
+    <after>
+      <controller name="Tasks" />
+      <rule id="r101" />
+    </after>
+  </c>
+  <c y="NodeSet" t="2020-03-18T15:28:42">
+    <controller name="Tasks" />
+    <rule id="r101" />
+    <update>
+      <Script>var d = new Date();
+if (d.getMinutes() &lt; 30)
+    d.setMinutes(30, 0, 0);
+else
+    d.setMinutes(60, 0, 0);
+$row.Date = d;</Script>
+    </update>
+  </c>
+</log>

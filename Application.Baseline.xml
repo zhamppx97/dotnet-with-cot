@@ -1,0 +1,182 @@
+<application snapshot="false" xmlns="urn:schemas-codeontime-com:data-aquarium-application" xmlns:m="urn:codeontime:data-map" xmlns:dm="urn:schemas-codeontime-com:data-model">
+  <pages xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+    <page name="Home" title="^HomeTitle^Start^HomeTitle^" description="^HomeDesc^Application home page^HomeDesc^" path="^HomePath^Home^HomePath^" style="HomePage" customStyle="Wide" index="1000">
+      <containers>
+        <container id="container1" flow="NewRow" />
+        <container id="container2" flow="NewColumn" />
+      </containers>
+      <controls>
+        <control id="control1" name="TableOfContents" container="container1" />
+        <control id="control2" name="Welcome" container="container2" />
+      </controls>
+    </page>
+    <page name="Tasks" title="Tasks" description="View Tasks" index="1010" path="Tasks">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Tasks" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
+      </dataViews>
+      <controls />
+      <about>This page allows tasks management.</about>
+    </page>
+    <page name="Categories" title="Categories" description="View Categories" index="1020" path="Categories">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Categories" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
+      </dataViews>
+      <controls />
+      <about>This page allows categories management.</about>
+    </page>
+    <page name="Locations" title="Locations" description="View Locations" index="1030" path="Locations">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Locations" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
+      </dataViews>
+      <controls />
+      <about>This page allows locations management.</about>
+    </page>
+    <page name="Attachments" title="Attachments" description="View Attachments" index="1040" path="Attachments">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Attachments" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows attachments management.</about>
+    </page>
+    <page name="Membership" title="^MembershipTitle^Membership Manager^MembershipTitle^" description="^MembershipDesc^User and role manager^MembershipDesc^" roles="Administrators" path="^MembershipPath^Membership^MembershipPath^" style="UsersPage" index="1050">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <about>^MembershipAbout^This page allows to manage roles and users.^MembershipAbout^</about>
+      <controls>
+        <control id="control1" name="MembershipManager" container="container1" />
+      </controls>
+    </page>
+  </pages>
+  <userControls>
+    <userControl name="TableOfContents" prefix="uc" generate="Always">
+      <body>
+                
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;div class="ParaInfo"&gt;
+        ^TocInstruction^Please select a page link in the table of contents below.^TocInstruction^
+    &lt;/div&gt;
+    &lt;div class="ParaHeader"&gt;
+        ^TocHeader^Site Map^TocHeader^
+    &lt;/div&gt;
+    &lt;div data-role="placeholder" data-placeholder="site-map"&gt;&lt;/div&gt;
+
+    &lt;div id="app-sitemap" data-app-role="page" data-activator="Button|^TocHeader^Site Map^TocHeader^"&gt;
+        &lt;p&gt;
+            &lt;span&gt;^TocInstruction^Please select a page link in the table of contents below.^TocInstruction^&lt;/span&gt;
+        &lt;/p&gt;
+        &lt;div data-app-role="sitemap"&gt;&lt;/div&gt;
+        &lt;p&gt;
+            &lt;br /&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+              </body>
+    </userControl>
+    <userControl name="Welcome" prefix="uc" generate="Always">
+      <body>
+                  
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;body&gt;
+                
+&lt;div style="padding-left:8px"&gt;&lt;div class="ParaInfo"&gt;
+        ^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^&lt;/div&gt;
+&lt;div class="ParaHeader"&gt;
+    ^SignInHeader^Instructions^SignInHeader^
+&lt;/div&gt;
+&lt;div class="ParaText"&gt;
+    ^SignInPara1^Two standard user accounts are automatically created when application is initialized
+    if membership option has been selected for this application.^SignInPara1^
+&lt;/div&gt;
+                  
+&lt;div class="ParaText"&gt;
+    ^SignInPara2^The administrative account &lt;b&gt;admin&lt;/b&gt; is authorized to access all areas of the
+    web site and membership manager. The standard &lt;b&gt;user&lt;/b&gt; account is allowed to
+    access all areas of the web site with the exception of membership manager.^SignInPara2^&lt;/div&gt;
+                
+                  
+&lt;div class="ParaText"&gt;
+    ^SignInPara3^Move the mouse pointer over the link &lt;i&gt;Login to this web site&lt;/i&gt; on the right-hand side
+    at the top of the page and sign in with one of the accounts listed below.^SignInPara3^&lt;/div&gt;
+                
+&lt;div class="ParaText"&gt;
+    &lt;div style="border: solid 1px black; background-color: InfoBackground; padding: 8px;
+        float: left;"&gt;
+        ^AdminDesc^Administrative account^AdminDesc^:&lt;br /&gt;
+        &lt;b title="User Name"&gt;admin&lt;/b&gt; / &lt;b title="Password"&gt;admin123%&lt;/b&gt;
+        &lt;br /&gt;
+        &lt;br /&gt;
+        ^UserDesc^Standard user account^UserDesc^:&lt;br /&gt;
+        &lt;b title="User Name"&gt;user&lt;/b&gt; / &lt;b title="Password"&gt;user123%&lt;/b&gt;
+    &lt;/div&gt;
+    &lt;div style="clear:both;margin-bottom:8px"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="app-welcome" data-app-role="page" data-activator="Button|^SignInHeader^Instructions^SignInHeader^" data-activator-description="^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^"&gt;
+      &lt;p&gt;^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^&lt;/p&gt;
+      &lt;p&gt;
+          ^SignInPara1^Two standard user accounts are automatically created when application is initialized
+  if membership option has been selected for this application.^SignInPara1^
+      &lt;/p&gt;
+
+      &lt;p&gt;
+          ^SignInPara2^The administrative account &lt;b&gt;admin&lt;/b&gt; is authorized to access all areas of the
+  web site and membership manager. The standard &lt;b&gt;user&lt;/b&gt; account is allowed to
+  access all areas of the web site with the exception of membership manager.^SignInPara2^
+      &lt;/p&gt;
+      &lt;p&gt;
+          ^AdminDesc^Administrative account^AdminDesc^:&lt;br /&gt;
+          &lt;b title="User Name"&gt;admin&lt;/b&gt; / &lt;b title="Password"&gt;admin123%&lt;/b&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+          ^UserDesc^Standard user account^UserDesc^:&lt;br /&gt;
+          &lt;b title="User Name"&gt;user&lt;/b&gt; / &lt;b title="Password"&gt;user123%&lt;/b&gt;
+      &lt;/p&gt;
+      &lt;p&gt;&lt;a href="#" data-role="button" data-inline="true" data-theme="b" data-app-role="loginstatus" data-icon="lock"&gt;Login Status&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+                  
+&lt;/body&gt;
+&lt;/html&gt;
+                </body>
+    </userControl>
+    <userControl name="MembershipManager" prefix="uc" generate="Always">
+      <body>
+                  
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;div data-activator="Tab|{Web.MembershipResources.Manager.UsersTab}"&gt;
+        &lt;div id="users" data-controller="aspnet_Membership" data-search-by-first-letter="true" data-tags="multi-select-none"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-activator="Tab|{Web.MembershipResources.Manager.RolesTab}"&gt;
+        &lt;div id="roles" data-controller="aspnet_Roles" data-tags="multi-select-none"&gt;&lt;/div&gt;
+        &lt;div id="role-users" data-controller="aspnet_Membership" data-view="usersInRolesGrid" 
+             data-filter-source="roles" data-filter-fields="RoleId" data-page-size="5" 
+             data-search-by-first-letter="true" data-auto-hide="self"  data-tags="multi-select-none"
+             data-page-header="{Web.MembershipResources.Manager.UsersInRole}"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </body>
+    </userControl>
+  </userControls>
+</application>

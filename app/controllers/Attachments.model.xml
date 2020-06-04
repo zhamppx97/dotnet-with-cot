@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Attachments" alias="Attachments" created="2020-03-16T11:41:34" modified="2020-03-16T11:42:11" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Task" parentTableSchema="dbo" parentTableName="Tasks" x="315" y="20">
+      <foreignKeyColumn columnName="TaskID" parentColumnName="TaskID" />
+    </foreignKey>
+    <foreignKey id="TaskCategorie" parentTableSchema="dbo" parentTableName="Categories" baseForeignKey="Task" x="599" y="20">
+      <foreignKeyColumn columnName="CategorieID" parentColumnName="CategorieID" />
+    </foreignKey>
+    <foreignKey id="TaskLocation" parentTableSchema="dbo" parentTableName="Locations" baseForeignKey="Task" x="599" y="160">
+      <foreignKeyColumn columnName="LocationID" parentColumnName="LocationID" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="AttachmentID" fieldName="AttachmentID" label="Attachment ID" />
+    <column name="Attachment" fieldName="Attachment" label="Attachment" />
+    <column name="FileName" fieldName="FileName" label="File Name" />
+    <column name="Length" fieldName="Length" label="Length" />
+    <column name="ContentType" fieldName="ContentType" label="Content Type" />
+    <column name="TaskID" fieldName="TaskID" label="Task ID" aliasColumnName="Description" aliasForeignKey="Task" />
+    <column name="Description" fieldName="TaskDescription" label="Task Description" foreignKey="Task" />
+    <column name="CategorieName" fieldName="TaskCategorieName" label="Task Categorie Name" foreignKey="TaskCategorie" />
+    <column name="Name" fieldName="TaskLocationName" label="Task Location Name" foreignKey="TaskLocation" />
+  </columns>
+</dataModel>

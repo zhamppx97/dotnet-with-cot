@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Tasks" alias="Tasks" created="2020-03-13T11:11:01" modified="2020-03-16T11:59:21" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Categorie" parentTableSchema="dbo" parentTableName="Categories" x="303" y="20">
+      <foreignKeyColumn columnName="CategorieID" parentColumnName="CategorieID" />
+    </foreignKey>
+    <foreignKey id="Location" parentTableSchema="dbo" parentTableName="Locations" x="603" y="20">
+      <foreignKeyColumn columnName="LocationID" parentColumnName="LocationID" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="TaskID" fieldName="TaskID" label="Task ID" />
+    <column name="Description" fieldName="Description" label="Description" />
+    <column name="Date" fieldName="Date" label="Date" format="g" sortType="Descending" sortOrder="1" />
+    <column name="Created" fieldName="Created" label="Created" format="g" />
+    <column name="Completed" fieldName="Completed" label="Completed" format="g" />
+    <column name="CategorieID" fieldName="CategorieID" label="Categorie ID" aliasColumnName="CategorieName" aliasForeignKey="Categorie" />
+    <column name="CategorieName" fieldName="CategorieName" label="Categorie Name" foreignKey="Categorie" />
+    <column name="LocationID" fieldName="LocationID" label="Location ID" aliasColumnName="Name" aliasForeignKey="Location" />
+    <column name="Name" fieldName="LocationName" label="Location Name" foreignKey="Location" />
+    <column name="Address" fieldName="LocationAddress" label="Location Address" foreignKey="Location" />
+    <column name="City" fieldName="City" label="City" foreignKey="Location" />
+    <column name="State" fieldName="State" label="State" foreignKey="Location" />
+    <column name="PostalCode" fieldName="PostalCode" label="Postal Code" foreignKey="Location" />
+    <column name="Country" fieldName="Country" label="Country" foreignKey="Location" />
+    <column name="Creator" fieldName="Creator" label="Creator" />
+    <column name="Owner" fieldName="Owner" label="Owner" />
+  </columns>
+</dataModel>
